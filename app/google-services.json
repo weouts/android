@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1072033743075",
+    "firebase_url": "https://weouts-3614d.firebaseio.com",
+    "project_id": "weouts-3614d",
+    "storage_bucket": "weouts-3614d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072033743075:android:2c1ed145a3814117",
+        "android_client_info": {
+          "package_name": "com.weouts.program.andro.weouts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072033743075-sdufkg3ca8v4rlqds8eajj429ki1s62l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weouts.program.andro.weouts",
+            "certificate_hash": "FEEE79DC639C8B86E6042C83D705861FAF3D1BE0"
+          }
+        },
+        {
+          "client_id": "1072033743075-tjt6vhlkfeql4v4hlp685rj1jbhtb3uv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDazO-0c1jJjtEKc9Jy0l_qdfSK_-N8G3U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072033743075-tjt6vhlkfeql4v4hlp685rj1jbhtb3uv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
