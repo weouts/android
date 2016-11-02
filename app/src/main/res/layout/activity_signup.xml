@@ -1,82 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin">
 
     <ImageView
-        android:layout_width="@dimen/logo_w_h"
-        android:layout_height="@dimen/logo_w_h"
-        android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher" />
+        android:id="@+id/img_signup"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@+id/desc_signup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/desc_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="Create your account"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_signup" />
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/edt_name"
-        android:layout_width="match_parent"
+        android:id="@+id/str_name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:hint="@string/str_name"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_signup" />
 
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/email"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintLeft_toLeftOf="@+id/str_name"
+        app:layout_constraintRight_toRightOf="@+id/str_name"
+        app:layout_constraintTop_toBottomOf="@+id/str_name" />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signup"
+        app:layout_constraintLeft_toLeftOf="@+id/email"
+        app:layout_constraintRight_toRightOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/btn_signup"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:background="@color/colorAccent"
         android:text="Create account"
         android:textAllCaps="false"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintLeft_toLeftOf="@+id/password"
+        app:layout_constraintRight_toRightOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:background="@null"
-        android:text="@string/str_already_member"
+        android:text="Already member? Login"
         android:textAllCaps="false"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/str_name"
+        app:layout_constraintRight_toRightOf="@+id/str_name"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="center|bottom"
-        android:layout_marginBottom="20dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
