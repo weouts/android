@@ -54,7 +54,7 @@ public class ResetPasswordActivity extends AppCompatActivity{
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
                 auth.sendPasswordResetEmail(email)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -65,7 +65,6 @@ public class ResetPasswordActivity extends AppCompatActivity{
                                     Toast.makeText(ResetPasswordActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                                 }
 
-                                progressBar.setVisibility(View.GONE);
                             }
                         });
             }
