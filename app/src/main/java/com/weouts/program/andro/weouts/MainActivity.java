@@ -1,4 +1,4 @@
-package activity;
+package com.weouts.program.andro.weouts;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.weouts.program.andro.weouts.R;
-import com.weouts.program.andro.weouts.SigninActivity;
-import com.weouts.program.andro.weouts.SignupActivity;
 
 public class MainActivity extends AppCompatActivity {
 
