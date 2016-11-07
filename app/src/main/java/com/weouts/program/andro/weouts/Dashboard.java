@@ -72,7 +72,7 @@ public class Dashboard extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        android.app.Fragment fragment = null;
+        Fragment fragment = null;
         switch (id){
             case R.id.nav_webview:
                 fragment = new Webview();
