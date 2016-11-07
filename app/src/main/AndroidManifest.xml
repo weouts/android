@@ -18,11 +18,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".SigninActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity
-            android:name=".Dashboard"
+            android:name=".MainActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme"></activity>
     </application>

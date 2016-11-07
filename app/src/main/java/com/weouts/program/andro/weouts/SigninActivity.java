@@ -35,7 +35,7 @@ public class SigninActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(SigninActivity.this, Dashboard.class));
+            startActivity(new Intent(SigninActivity.this, MainActivity.class));
             finish();
         }
 
@@ -94,7 +94,7 @@ public class SigninActivity extends AppCompatActivity {
                                         Toast.makeText(SigninActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(SigninActivity.this, Dashboard.class);
+                                    Intent intent = new Intent(SigninActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
