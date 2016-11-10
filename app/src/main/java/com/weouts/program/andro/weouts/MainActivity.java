@@ -147,10 +147,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         Fragment fragment = null;
         switch (id){
-            case R.id.nav_webview:
+            case R.id.nav_dashboard:
                 fragment = new Webview();
                 break;
-            case R.id.nav_setup:
+            case R.id.nav_setting:
                 fragment = new SetupActivity();
                 break;
             case R.id.nav_logout:
