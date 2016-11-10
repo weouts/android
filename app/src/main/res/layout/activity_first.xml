@@ -7,19 +7,19 @@
     android:background="@color/colorPrimary"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <TextView
+    <ImageView
         android:id="@+id/img_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/Logo"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:text="WeOuts!"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_32sdp"
         app:layout_constraintBottom_toTopOf="@+id/str_description"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/str_description"
