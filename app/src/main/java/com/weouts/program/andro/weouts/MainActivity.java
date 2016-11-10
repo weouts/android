@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        super.onResume();
 //        progressBar.setVisibility(View.GONE);
 //    }
+    public void signOut() {
+        auth.signOut();
+    }
 
     @Override
     public void onStart() {
@@ -129,6 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_logout){
+            signOut();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -145,6 +152,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_setup:
                 fragment = new SetupActivity();
+                break;
+            case R.id.nav_logout:
+                signOut();
                 break;
         }
         if (fragment != null){
