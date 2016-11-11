@@ -9,32 +9,27 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FirstActivity extends AppCompatActivity {
-    private Button btnSignin;
-    private Button btnSignup;
+    private Button btnSigin, btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-
-        btnSignin = (Button) findViewById(R.id.btn_signin);
+        btnSigin = (Button) findViewById(R.id.btn_signin);
         btnSignup = (Button) findViewById(R.id.btn_signup);
 
-
-        btnSignin.setOnClickListener(new View.OnClickListener() {
+        btnSigin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(FirstActivity.this, SigninActivity.class));
             }
         });
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(FirstActivity.this, SignupActivity.class));
             }
         });
-
-
     }
 }
