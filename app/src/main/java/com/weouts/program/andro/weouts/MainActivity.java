@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-//     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
+    //     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
 //            changeEmail, changePassword, sendEmail, remove, signOut;
 //
 //    private EditText oldEmail, newEmail, password, newPassword;
@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        });
 
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        auth.signOut();
 //    }
 
-//    @Override
+    //    @Override
 //    protected void onResume() {
 //        super.onResume();
 //        progressBar.setVisibility(View.GONE);
@@ -129,11 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        if (id == R.id.action_logout){
-            signOut();
+        if (id == R.id.action_search) {
             return true;
         }
 
@@ -146,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Fragment fragment = null;
-        switch (id){
+        switch (id) {
             case R.id.nav_dashboard:
                 fragment = new Webview();
                 break;
@@ -157,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 signOut();
                 break;
         }
-        if (fragment != null){
+        if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
