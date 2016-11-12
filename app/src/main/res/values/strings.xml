@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Weouts</string>
     <string name="facebook_app_id">337734359922124</string>
+    <string name="fb_login_protocol_scheme">fb337734359922124</string>
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
