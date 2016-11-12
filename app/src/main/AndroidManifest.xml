@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <uses-permission android:name="android.permission.INTERNET" />
 
-        <activity android:name=".FirstActivity">
+        <activity android:name=".DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,6 @@
         <activity android:name=".ResetPasswordActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme"></activity>
     </application>
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.weouts.program.andro.weouts"
-        minSdkVersion 17
+        minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:9.8.0'
     compile 'com.intuit.sdp:sdp-android:1.0.3'
     testCompile 'junit:junit:4.12'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
 
 

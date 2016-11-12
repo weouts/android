@@ -20,12 +20,6 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:weightSum="1">
 
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="45dp"
-                android:src="@drawable/logo"
-                android:layout_weight="0.04" />
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
