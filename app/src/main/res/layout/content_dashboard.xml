@@ -6,15 +6,10 @@
     tools:context=".DashboardActivity"
     tools:showIn="@layout/activity_dashboard">
 
-    <include
-        android:id="@+id/appbar"
-        layout="@layout/appbar" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recv_dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/appbar"
         android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
