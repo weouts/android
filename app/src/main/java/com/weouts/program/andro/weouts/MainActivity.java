@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void goLoginScreen() {
-        Intent intent = new Intent(this, SigninActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(MainActivity.this, SigninActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void signOut() {
