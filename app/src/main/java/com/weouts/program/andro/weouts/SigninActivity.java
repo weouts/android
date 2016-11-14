@@ -15,6 +15,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,10 +31,39 @@ public class SigninActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressBar progressBar;
     private Button btnLogin, btnReset;
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // set the view now
+        setContentView(R.layout.activity_signin);
+
+        callbackManager = CallbackManager.Factory.create();
+
+        //authentication facebook
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                goMainScreen();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplicationContext(), R.string.com_facebook_loginview_cancel_action, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+            Toast.makeText(getApplicationContext(), R.string.com_facebook_internet_permission_error_message, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -38,9 +72,6 @@ public class SigninActivity extends AppCompatActivity {
             startActivity(new Intent(SigninActivity.this, MainActivity.class));
             finish();
         }
-
-        // set the view now
-        setContentView(R.layout.activity_signin);
 
 
         inputEmail = (EditText) findViewById(R.id.email);
@@ -102,5 +133,17 @@ public class SigninActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void goMainScreen() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
