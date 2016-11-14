@@ -18,18 +18,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    //     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
-//            changeEmail, changePassword, sendEmail, remove, signOut;
-//
-//    private EditText oldEmail, newEmail, password, newPassword;
-//    private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
 
@@ -39,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
+
+        if (AccessToken.getCurrentAccessToken() == null){
+            goLoginScreen();
+        }
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -59,13 +60,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         };
 
-//        signOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                signOut();
-//            }
-//        });
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -79,17 +73,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    //sign out method
-//    public void signOut() {
-//        auth.signOut();
-//    }
+    private void goLoginScreen() {
+        Intent intent = new Intent(this, SigninActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
-    //    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        progressBar.setVisibility(View.GONE);
-//    }
     public void signOut() {
+        LoginManager.getInstance().logOut();
+        goLoginScreen();
         auth.signOut();
     }
 
