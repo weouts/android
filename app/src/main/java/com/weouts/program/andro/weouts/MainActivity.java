@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AppEventsLogger.activateApp(this);
 
         if (AccessToken.getCurrentAccessToken() == null){
-            goLoginScreen();
+//            goLoginScreen();
         }
 
         //get firebase auth instance
