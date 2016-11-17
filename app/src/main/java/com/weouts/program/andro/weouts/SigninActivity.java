@@ -141,7 +141,7 @@ public class SigninActivity extends AppCompatActivity {
 
     private void goMainScreen() {
         Intent intent = new Intent(SigninActivity.this, MainActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 2);
         finish();
     }
 

@@ -43,9 +43,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
 
-        if (AccessToken.getCurrentAccessToken() == null){
+//        if (AccessToken.getCurrentAccessToken() == null){
 //            goLoginScreen();
-        }
+//        }
+
+//        if (ac)
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -60,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    startActivity(new Intent(MainActivity.this, SigninActivity.class));
-                    finish();
+//                    startActivity(new Intent(MainActivity.this, SigninActivity.class));
+//                    finish();
                 }
             }
         };
