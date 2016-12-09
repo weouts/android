@@ -1,4 +1,4 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.utility;
 
 import android.content.Context;
 import android.content.res.TypedArray;

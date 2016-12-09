@@ -1,23 +1,24 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.weouts.program.andro.weouts.model.LocalSite;
+import com.weouts.program.andro.weouts.model.LocalSiteAdapter;
+import com.weouts.program.andro.weouts.R;
+import com.weouts.program.andro.weouts.utility.RecyclerTouchListener;
 
 import java.util.ArrayList;
 import java.util.List;

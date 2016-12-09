@@ -1,4 +1,4 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.model;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.weouts.program.andro.weouts.R;
 
 import java.util.List;
 

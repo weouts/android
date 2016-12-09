@@ -1,4 +1,4 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.view.activity;
 
 /**
  * Created by Andro on 21/10/2016.
@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.weouts.program.andro.weouts.R;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText inputEmail, inputPassword;

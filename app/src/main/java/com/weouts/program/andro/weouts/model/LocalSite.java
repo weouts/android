@@ -1,4 +1,4 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.model;
 
 import android.graphics.drawable.Drawable;
 

@@ -1,4 +1,4 @@
-package com.weouts.program.andro.weouts;
+package com.weouts.program.andro.weouts.view.activity;
 
 import android.support.v4.app.Fragment;
 
