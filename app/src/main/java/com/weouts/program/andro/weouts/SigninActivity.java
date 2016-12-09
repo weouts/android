@@ -22,6 +22,11 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -34,7 +39,10 @@ public class SigninActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button btnLogin, btnReset;
     private LoginButton loginButton;
+    private SignInButton btnLoginGoogle;
     private CallbackManager callbackManager;
+    private GoogleSignInOptions gso;
+    private GoogleApiClient mGoogleApiClient;
 
 
     @Override
@@ -42,10 +50,39 @@ public class SigninActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // set the view now
         setContentView(R.layout.activity_signin);
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        // Build a GoogleApiClient with access to the Google Sign-In API and the
+        // options specified by gso.
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                        Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
+                    }
+                } /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
 
         callbackManager = CallbackManager.Factory.create();
+
+        // google authenticaion
+        btnLoginGoogle = (SignInButton) findViewById(R.id.btn_google);
+        btnLoginGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+                startActivityForResult(signInIntent, 3);
+            }
+        });
 
         //authentication facebook
         loginButton = (LoginButton) findViewById(R.id.btn_fb);

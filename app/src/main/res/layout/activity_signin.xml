@@ -1,87 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/activity_vertical_margin">
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp"
         android:scaleType="fitXY"
-        android:src="@drawable/logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/logo" />
 
     <ImageView
         android:id="@+id/txt_title"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/img_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:scaleType="fitXY"
-        android:src="@drawable/weouts"
-        app:layout_constraintLeft_toLeftOf="@+id/img_logo"
-        app:layout_constraintRight_toRightOf="@+id/img_logo"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo" />
+        android:src="@drawable/weouts" />
 
     <ImageView
         android:id="@+id/img_heart"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="46dp"
-        android:src="@drawable/heart"
-        app:layout_constraintBottom_toTopOf="@+id/desc_login"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+        android:src="@drawable/heart" />
 
     <TextView
         android:id="@+id/desc_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/img_heart"
+        android:layout_centerInParent="true"
         android:text="discover your loved place"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_signin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_heart" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/txt_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_fb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         android:text="Sign in: "
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_fb"
-        app:layout_constraintLeft_toLeftOf="@+id/img_logo"
-        app:layout_constraintRight_toRightOf="@+id/img_logo"
-        app:layout_constraintTop_toBottomOf="@+id/desc_login" />
-
+        android:textSize="18sp" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/btn_fb"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btn_google"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_signin" />
+        android:layout_above="@+id/btn_google"
+        android:src="@drawable/btn_fb" />
 
-    <com.facebook.login.widget.LoginButton
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_google"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_fb" />
+        android:layout_alignParentBottom="true" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -94,4 +82,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
