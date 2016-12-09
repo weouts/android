@@ -160,11 +160,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-//        if (fragment != null) {
-//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//            ft.replace(R.id.content_frame, fragment);
-//            ft.commit();
-//        }
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
