@@ -26,6 +26,13 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/kawah_putih" />
 
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="24dp" />
+
             <TextView
                 android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
@@ -35,13 +42,24 @@
                 android:layout_marginRight="@dimen/card_margin"
                 android:layout_marginTop="@dimen/card_margin"
                 android:text="Lokasi A"
+                android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_title"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:text="46 Reviews" />
 
             <TextView
                 android:id="@+id/txt_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_title"
+                android:layout_below="@+id/txt_reviews"
                 android:layout_marginBottom="@dimen/card_margin"
                 android:layout_marginLeft="@dimen/card_margin"
                 android:layout_marginRight="@dimen/card_margin"
