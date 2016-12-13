@@ -81,38 +81,6 @@ public class DashboardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    //    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        localSiteAdapter = new LocalSiteAdapter(this, localSiteList);
-//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-//        recyclerView.setLayoutManager(mLayoutManager);
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
-//            @Override
-//            public void onClick(View view, int position) {
-//                LocalSite localSite = localSiteList.get(position);
-//                Toast.makeText(getApplicationContext(), localSite.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onLongClick(View view, int position) {
-//
-//            }
-//        }));
-//        recyclerView.setAdapter(localSiteAdapter);
-//
-//        prepareLocalSiteData();
-//
-//        try {
-//            Glide.with(this).load(R.drawable.kawah_putih)
-//                    .into((ImageView) findViewById(R.id.img_location));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     private void prepareLocalSiteData() {
         int[] thumbnail = new int[]{
                 R.drawable.gedung_sate,

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/card_margin"
-        android:elevation="3dp"
+        android:elevation="10dp"
         card_view:cardCornerRadius="@dimen/card_localsite_radius">
 
         <RelativeLayout
@@ -31,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="24dp"
-                android:layout_marginTop="110dp" />
+                android:layout_marginTop="100dp" />
 
             <TextView
                 android:id="@+id/txt_title"
@@ -49,8 +48,8 @@
                 android:id="@+id/img_review"
                 android:layout_width="90dp"
                 android:layout_height="20dp"
-                android:layout_marginLeft="5dp"
                 android:layout_below="@id/txt_title"
+                android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_review" />
 
             <TextView
