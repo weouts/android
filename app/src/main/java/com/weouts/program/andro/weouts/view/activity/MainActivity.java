@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.weouts.program.andro.weouts.R;
+import com.weouts.program.andro.weouts.view.fragment.DashboardFragment;
 import com.weouts.program.andro.weouts.view.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -87,10 +88,9 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_dashboard) {
-            // Handle the camera action
-            fragment = new HomeFragment();
+            fragment = new DashboardFragment();
         } else if (id == R.id.nav_map) {
-
+            fragment = new HomeFragment();
         } else if (id == R.id.nav_user) {
 
         } else if (id == R.id.nav_setting) {

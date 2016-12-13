@@ -27,7 +27,7 @@ import java.util.List;
  * Created by mochadwi on 11/3/16.
  */
 
-public class DashboardActivity extends Fragment {
+public class DashboardFragment extends Fragment {
     private List<LocalSite> localSiteList = new ArrayList<>();
     private RecyclerView recyclerView;
     private LocalSiteAdapter localSiteAdapter;
