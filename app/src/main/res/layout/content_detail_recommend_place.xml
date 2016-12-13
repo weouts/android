@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_detail_dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.weouts.program.andro.weouts.view.activity.DetailRecommendPlaceActivity"
+    tools:showIn="@layout/activity_detail_recommend_place">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_caption_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Judul"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_caption_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+            app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_caption_title" />
+
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="blabalbalbalblablabll lorem ispsum"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+            app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_caption_location" />
+
+
+        <TextView
+            android:id="@+id/txt_caption_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+            app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_location" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="blabalbalbalblablabll lorem ispsum"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_caption_title"
+            app:layout_constraintRight_toRightOf="@+id/txt_caption_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_caption_description" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

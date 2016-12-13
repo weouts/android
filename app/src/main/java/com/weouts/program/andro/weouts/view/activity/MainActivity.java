@@ -1,11 +1,8 @@
 package com.weouts.program.andro.weouts.view.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.weouts.program.andro.weouts.R;
-import com.weouts.program.andro.weouts.view.fragment.DashboardFragment;
+import com.weouts.program.andro.weouts.view.fragment.RecommendPlaceFragment;
 import com.weouts.program.andro.weouts.view.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -88,9 +85,9 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_dashboard) {
-            fragment = new DashboardFragment();
-        } else if (id == R.id.nav_map) {
             fragment = new HomeFragment();
+        } else if (id == R.id.nav_map) {
+            fragment = new RecommendPlaceFragment();
         } else if (id == R.id.nav_user) {
 
         } else if (id == R.id.nav_setting) {

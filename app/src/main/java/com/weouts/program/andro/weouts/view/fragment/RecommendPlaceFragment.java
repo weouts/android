@@ -1,8 +1,8 @@
 package com.weouts.program.andro.weouts.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -12,13 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 import com.weouts.program.andro.weouts.model.LocalSite;
 import com.weouts.program.andro.weouts.model.LocalSiteAdapter;
 import com.weouts.program.andro.weouts.R;
 import com.weouts.program.andro.weouts.utility.RecyclerTouchListener;
+import com.weouts.program.andro.weouts.view.activity.DetailRecommendPlaceActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,21 +28,21 @@ import java.util.List;
  * Created by mochadwi on 11/3/16.
  */
 
-public class DashboardFragment extends Fragment {
+public class RecommendPlaceFragment extends Fragment {
     private List<LocalSite> localSiteList = new ArrayList<>();
     private RecyclerView recyclerView;
     private LocalSiteAdapter localSiteAdapter;
-    private CoordinatorLayout coordinatorLayout;
+    private RelativeLayout relativeLayout;
     private FragmentActivity fragmentActivity;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentActivity = super.getActivity();
-        coordinatorLayout = (CoordinatorLayout) inflater.inflate(R.layout.activity_dashboard, container,
+        relativeLayout = (RelativeLayout) inflater.inflate(R.layout.activity_recommend_place, container,
                 false);
 
-        recyclerView = (RecyclerView) coordinatorLayout.findViewById(R.id.recv_dashboard);
+        recyclerView = (RecyclerView) relativeLayout.findViewById(R.id.recv_dashboard);
 
         localSiteAdapter = new LocalSiteAdapter(fragmentActivity, localSiteList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(fragmentActivity.getApplicationContext());
@@ -52,8 +53,14 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 LocalSite localSite = localSiteList.get(position);
-                Toast.makeText(fragmentActivity.getApplicationContext(),
-                        localSite.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(fragmentActivity.getApplicationContext(),
+//                        localSite.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailRecommendPlaceActivity.class);
+                intent.putExtra("foto", localSite.getThumbnail());
+                intent.putExtra("judul", localSite.getTitle());
+                intent.putExtra("lokasi", localSite.getLocation());
+                intent.putExtra("deskripsi", localSite.getDescription());
+                startActivityForResult(intent, 1);
             }
 
             @Override
@@ -67,13 +74,13 @@ public class DashboardFragment extends Fragment {
 
         try {
             Glide.with(this).load(R.drawable.kawah_putih)
-                    .into((ImageView) coordinatorLayout.findViewById(R.id.img_location));
+                    .into((ImageView) relativeLayout.findViewById(R.id.img_location));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-        return coordinatorLayout;
+        return relativeLayout;
     }
 
     @Override
